@@ -1,0 +1,133 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Calculator_Workflow" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="sum" Type="OutArgument(x:Int32)" />
+    <x:Property Name="firstnumber" Type="InArgument(x:Int32)" />
+    <x:Property Name="secondnumber" Type="InArgument(x:Int32)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>654,1211</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Calculator_Workflow_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="34">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Calculator_Workflow" sap:VirtualizedContainerService.HintSize="476,1146" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Chrome: Calculator.net: Free Online Calculators - Math, Fitness, Finance, Science" sap:VirtualizedContainerService.HintSize="434,1054" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" IsIncognito="False" ScopeGuid="0a63dd16-f3ce-4c40-88df-8a1687b7b707" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,838" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ClickType="Single" DisplayName="Click first number" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0a63dd16-f3ce-4c40-88df-8a1687b7b707" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.calculator.net/" DesignTimeRectangle="499, 304, 52, 32" ElementType="Text" FriendlyName="'4'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname='{0}' tableRow='2' tag='SPAN' /&gt;&quot;, firstnumber)]" Guid="6eaabeb3-c73b-498e-bcf1-09d952487016" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADgAAAAkCAYAAADckvn+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD1SURBVGhD7dkxCsIwFMbx3Mml4NKhp3AM6GSHHqCjSHEXHOxit4Lg6FTxAC4e6MmnJkbIplXe63vwHyQU8qMYSzUkfIYFXOzONJ5vaTTbsAx7hyEcD8TCdHWg5nih/enKMuwdhhDpgdBzxrlggMWNB+IWxy7gGCxuFMgxBXJPgb3VVpQYQ8ZkVLSR9S/1N+DSAicVuM6fOJHAhiYeJxBYl9kdlthc4HfQHSxpRbW8Q6ajIg1A4oDuYLHN47M04OtnIV5SdtHrPk2BvSX9SUY+8EcpkHsK5J4CuTdMoPhX9+L/fMFgAXrcYo5h7yEO8waUOMKBRDeDio2ylT9U/AAAAABJRU5ErkJggg==" InformativeScreenshot="5b7a06d0f5a83da36b7b9ea2f3eb6b73.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Calculator.net: Free Online Calculators - Math, Fitness, Finance, Science' /&gt;" SearchSteps="Selector, Image" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DisplayName="Click '+'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0a63dd16-f3ce-4c40-88df-8a1687b7b707" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.calculator.net/" DesignTimeRectangle="661, 268, 52, 32" ElementType="Text" FriendlyName="'+'" FullSelectorArgument="&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname='+' tableRow='2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='+' type='' tag='SPAN' class='sciop' check:innerText='+' /&gt;" Guid="16c3bc8f-c0a7-47ed-a7f5-50ee5e01524b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADgAAAAkCAYAAADckvn+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC5SURBVGhD7dkxCsJAFIThPaHeL2Bj4SVCrK1MI6nTBCwsBA8wMsUuK8QuW8zLPPirJfA+ljRJQvDZF/A2LbhcJ5z7h2TcnYZ6CpAHw33G/HxjeX0k4+401MgCpF4Zl6OBljwFyCtee0AxWvIYqJiB6hmonoEtGrsDUkpIxxPGlfMtM7BFIYEF9a9GWANb5HdwwwxUz0D1DFTPQPUMVG+fwPCf7sP/fOHwgHpesWLcvcZxfoARJzgQ+AJg0EakRUilpgAAAABJRU5ErkJggg==" InformativeScreenshot="2dc748dc17e61e3f2721677b758751d3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Calculator.net: Free Online Calculators - Math, Fitness, Finance, Science' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DisplayName="Click second number" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0a63dd16-f3ce-4c40-88df-8a1687b7b707" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.calculator.net/" DesignTimeRectangle="553, 304, 52, 32" ElementType="Text" FriendlyName="'5'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname='{0}' tableRow='2' tag='SPAN' /&gt;&quot;, secondnumber)]" Guid="63ac31aa-ce6f-45d5-8505-88be0b403832" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADgAAAAkCAYAAADckvn+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEaSURBVGhD7dkxCsIwFMbx3Mml4OLQUzgKOtmhB+gopbgLDrrYrSA4OlU8gIsHevKhiTHESfPgpXnwXxKF/khpQRVFPsMCrg5XGi93NFpsRYZrh8EeA8TGfH2i9nyj4+UuMlw7DDbSAKGXjNPBAIseA8QR+74gMVj0JKDEElB6CfjfeionipRymjS0937+95iBLU1dXFTArqEsMMiNFbiv8ueJzVrvfohYgfXMui11gbGMwC8PmMBIRqB+wORUdq+1TfFCWmt/jhHo632q041v//f4gOa0CqrNekxA6x2YVf1zLbZb1LwmnAw4QKxA5CJD4hA7kLsElF4CSi8BpTdMYPQ/3Uf/5wsGG9DjiCWGa7dxmA9gjBM5kOgB/jCHDPjn94AAAAAASUVORK5CYII=" InformativeScreenshot="95576a2e1d1e84033b4047880412c934.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Calculator.net: Free Online Calculators - Math, Fitness, Finance, Science' /&gt;" SearchSteps="Selector, Image" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NGetText DisplayName="Get sum" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="0a63dd16-f3ce-4c40-88df-8a1687b7b707" Version="V1">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.calculator.net/" DesignTimeRectangle="225, 228, 542, 31" ElementType="Text" FriendlyName="'9'" FullSelectorArgument="&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='sciOutPut' tableRow='1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='sciOutPut' type='' tag='DIV' class='' /&gt;" Guid="f879d112-a120-470d-8b11-89d5a4f16f65" InformativeScreenshot="74b102dce6d727a0d3f5e4b95ee6b16b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Calculator.net: Free Online Calculators - Math, Fitness, Finance, Science' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="x:Int32">[sum]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAMUExURQgICDNmmY6NkP///zGrQCAAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAS0lEQVQ4T83OQQoAIAhE0bL737nAjRWjI4T0F256mE2CGDCcWNBBXwHcO9BW+9QTKgGMBna5zuwN9klnFsBocC8/vigAMA74BUBkAproCCHOFmR3AAAAAElFTkSuQmCC" InformativeScreenshot="c5a55eaffc61a7bef3296c5cbb96ac48.png" Selector="&lt;html app='chrome.exe' title='Calculator.net: Free Online Calculators - Math, Fitness, Finance, Science' /&gt;" Url="https://www.calculator.net/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
